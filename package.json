@@ -2,12 +2,14 @@
   "name": "game-of-thrones-back",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "public/js/index.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
     "build:dev": "tsc -w",
-    "prepare": "husky"
+    "prepare": "husky",
+    "start": "node .",
+    "start:dev": "node --watch . "
   },
   "keywords": [],
   "author": "",
