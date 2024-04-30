@@ -1,9 +1,3 @@
-import { Character } from "./Character/Character.js";
-import { King } from "./King/King.js";
+import { King } from "./characters/King/King.js";
 
-const clara = new Character("clara", "fraga", 4);
-
-const kingClara = new King("clara", "fraga", 4, 23);
-
-console.log(clara);
-console.log(kingClara);
+const joffreyBaratheon = new King("Jofrrey", "Baratheon", 14, 2);
