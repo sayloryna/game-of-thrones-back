@@ -3,10 +3,10 @@ import { Character } from "../Character/Character.js";
 
 export class King extends Character implements KingStructure {
   constructor(
-    character: CharacterBasic,
+    { name, familyName, age }: CharacterBasic,
     public totalReignYears: number,
   ) {
-    super(character.name, character.familyName, character.age);
+    super(name, familyName, age);
   }
 
   speak() {

@@ -8,11 +8,7 @@ export abstract class Character implements CharacterStructure {
     public name: string,
     public familyName: string,
     public age: number,
-  ) {
-    this.name = name;
-    this.familyName = familyName;
-    this.age = age;
-  }
+  ) {}
 
   die() {
     this.isAlive = false;

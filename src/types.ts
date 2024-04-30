@@ -1,4 +1,4 @@
-import { type Character } from "./characters/Character/Character";
+import { type Character } from "./characters/Character/Character.js";
 
 export interface CharacterBasic {
   name: string;
@@ -25,7 +25,7 @@ export interface FighterStructure {
 }
 
 export interface CounselorStructure {
-  counselledCharacter: CharacterStructure;
+  counselledCharacter: Character;
 }
 
 export interface SquireStructure {

@@ -1,5 +1,5 @@
 import { type CharacterBasic, type CounselorStructure } from "../../types";
-import { Character } from "../Character/Character";
+import { Character } from "../Character/Character.js";
 
 export class Counselor extends Character implements CounselorStructure {
   constructor(

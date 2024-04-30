@@ -6,17 +6,12 @@ import {
 import { Character } from "../Character/Character.js";
 
 export class Fighter extends Character implements FighterStructure {
-  public weapon: string;
-  public dexterityLevel: Level;
-
   constructor(
-    character: CharacterBasic,
-    weapon: string,
-    dexterityLevel: Level,
+    { name, familyName, age }: CharacterBasic,
+    public weapon: string,
+    public dexterityLevel: Level,
   ) {
-    super(character.name, character.familyName, character.age);
-    this.weapon = weapon;
-    this.dexterityLevel = dexterityLevel;
+    super(name, familyName, age);
   }
 
   speak() {
