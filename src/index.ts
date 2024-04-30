@@ -10,6 +10,12 @@ const daenerysTargaryen = new Fighter(
   8,
 );
 
+const jaimeLannister = new Fighter(
+  { name: "Jaime", familyName: "Lannister", age: 23 },
+  "Lamento de Viudas",
+  8,
+);
+
 const tyrionLannister = new Counselor(
   { name: "Tyrion", familyName: "Lannister", age: 40 },
   daenerysTargaryen,

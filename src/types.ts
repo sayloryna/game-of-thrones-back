@@ -1,3 +1,5 @@
+import { type Character } from "./characters/Character/Character";
+
 export interface CharacterBasic {
   name: string;
   familyName: string;
@@ -24,4 +26,9 @@ export interface FighterStructure {
 
 export interface CounselorStructure {
   counselledCharacter: CharacterStructure;
+}
+
+export interface SquireStructure {
+  master: Character;
+  grovellingLevel: Level;
 }
