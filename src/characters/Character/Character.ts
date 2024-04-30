@@ -1,5 +1,8 @@
-export abstract class Character {
+import { type CharacterStructure } from "../../types";
+
+export abstract class Character implements CharacterStructure {
   public isAlive = true;
+  public photoSource: string;
 
   constructor(
     public name: string,

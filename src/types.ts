@@ -6,9 +6,22 @@ export interface CharacterBasic {
 
 export interface CharacterStructure extends CharacterBasic {
   isAlive: boolean;
+  photoSource: string;
   die: () => void;
   speak: () => string;
-  photoSrc: string;
 }
 
 export type Level = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+
+export interface KingStructure {
+  totalReignYears: number;
+}
+
+export interface FighterStructure {
+  weapon: string;
+  dexterityLevel: Level;
+}
+
+export interface CounselorStructure {
+  counselledCharacter: CharacterStructure;
+}

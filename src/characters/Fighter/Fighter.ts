@@ -1,7 +1,11 @@
-import { type Level, type CharacterBasic } from "../../types";
+import {
+  type Level,
+  type CharacterBasic,
+  type FighterStructure,
+} from "../../types";
 import { Character } from "../Character/Character.js";
 
-export class Fighter extends Character {
+export class Fighter extends Character implements FighterStructure {
   public weapon: string;
   public dexterityLevel: Level;
 
