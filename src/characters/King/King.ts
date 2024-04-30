@@ -1,16 +1,12 @@
+import { type CharacterBasic, type KingStructure } from "../../types.js";
 import { Character } from "../Character/Character.js";
 
-export class King extends Character {
-  public totalReignYears: number;
-
+export class King extends Character implements KingStructure {
   constructor(
-    name: string,
-    familyName: string,
-    age: number,
-    totalReignYears: number,
+    { name, familyName, age }: CharacterBasic,
+    public totalReignYears: number,
   ) {
     super(name, familyName, age);
-    this.totalReignYears = totalReignYears;
   }
 
   speak() {

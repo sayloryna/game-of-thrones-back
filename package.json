@@ -9,7 +9,7 @@
     "build:dev": "tsc -w",
     "prepare": "husky",
     "start": "node .",
-    "start:dev": "node --watch . "
+    "start:dev": "node --watch ."
   },
   "keywords": [],
   "author": "",
