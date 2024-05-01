@@ -1,12 +1,12 @@
 import { type Character } from "./characters/Character/Character.js";
 
-export interface CharacterBasic {
+export interface BasicCharacter {
   name: string;
   familyName: string;
   age: number;
 }
 
-export interface CharacterStructure extends CharacterBasic {
+export interface CharacterStructure extends BasicCharacter {
   isAlive: boolean;
   photoSource: string;
   die: () => void;

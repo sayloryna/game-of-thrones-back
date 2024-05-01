@@ -1,13 +1,13 @@
 import {
   type Level,
-  type CharacterBasic,
+  type BasicCharacter,
   type FighterStructure,
 } from "../../types";
 import { Character } from "../Character/Character.js";
 
 export class Fighter extends Character implements FighterStructure {
   constructor(
-    { name, familyName, age }: CharacterBasic,
+    { name, familyName, age }: BasicCharacter,
     public weapon: string,
     public dexterityLevel: Level,
   ) {

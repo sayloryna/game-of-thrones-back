@@ -1,9 +1,9 @@
-import { type CharacterBasic, type CounselorStructure } from "../../types";
+import { type BasicCharacter, type CounselorStructure } from "../../types";
 import { Character } from "../Character/Character.js";
 
 export class Counselor extends Character implements CounselorStructure {
   constructor(
-    { age, familyName, name }: CharacterBasic,
+    { age, familyName, name }: BasicCharacter,
     public counselledCharacter: Character,
   ) {
     super(name, familyName, age);
