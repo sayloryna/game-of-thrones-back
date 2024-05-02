@@ -9,12 +9,18 @@ export interface Characters {
 
 const app = express();
 
-app.listen(6666, () => {
-  console.log("Listening on port: http://localhost:6666");
+app.listen(4000, () => {
+  console.log("Listening on port: http://localhost:4000");
 });
 
-app.get("/characters", (_req, res: Response<Character[]>) => {
-  res.status(200).json(characters.characters);
+app.use((_req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+
+  next();
+});
+
+app.get("/characters", (_req, res: Response<Characters>) => {
+  res.status(200).json(characters);
 });
 
 app.use((_req, res) => {
