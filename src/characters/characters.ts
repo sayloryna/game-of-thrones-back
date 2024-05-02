@@ -43,8 +43,8 @@ const bronn = new Squire(
 
 export const characters: Characters = {
   characters: [
-    joffreyBaratheon,
     jaimeLannister,
+    joffreyBaratheon,
     tyrionLannister,
     daenerysTargaryen,
     bronn,
