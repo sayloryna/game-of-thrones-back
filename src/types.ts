@@ -8,7 +8,7 @@ export interface BasicCharacter {
 
 export interface CharacterStructure extends BasicCharacter {
   isAlive: boolean;
-  photoSource: string;
+
   die: () => void;
   speak: () => string;
 }

@@ -5,6 +5,7 @@ export class Counselor extends Character implements CounselorStructure {
   constructor(
     { age, familyName, name }: BasicCharacter,
     public counselledCharacter: Character,
+    public photoSource: string,
   ) {
     super(name, familyName, age);
   }

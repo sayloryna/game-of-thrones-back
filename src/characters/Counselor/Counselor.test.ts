@@ -7,10 +7,12 @@ describe("Given a Counselor", () => {
       const counselledCharacter = new King(
         { name: "", familyName: "", age: 5 },
         5,
+        "",
       );
       const counselor = new Counselor(
         { name: "", familyName: "", age: 5 },
         counselledCharacter,
+        "",
       );
 
       const locution = "No sé por qué, pero creo que voy a morir pronto";

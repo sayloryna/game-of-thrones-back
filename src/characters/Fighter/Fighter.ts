@@ -10,6 +10,7 @@ export class Fighter extends Character implements FighterStructure {
     { name, familyName, age }: BasicCharacter,
     public weapon: string,
     public dexterityLevel: Level,
+    public photoSource: string,
   ) {
     super(name, familyName, age);
   }
