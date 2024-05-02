@@ -7,6 +7,7 @@ describe("Given a Fighter", () => {
         { name: "", familyName: "", age: 5 },
         "espada",
         5,
+        "",
       );
 
       const locution = "Primero pego y luego pregunto";

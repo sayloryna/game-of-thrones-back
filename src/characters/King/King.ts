@@ -5,6 +5,7 @@ export class King extends Character implements KingStructure {
   constructor(
     { name, familyName, age }: BasicCharacter,
     public totalReignYears: number,
+    public photoSource: string,
   ) {
     super(name, familyName, age);
   }
