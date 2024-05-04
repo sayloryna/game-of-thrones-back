@@ -1,4 +1,5 @@
 import { type CharacterStructure } from "../../types";
+import { randomUUID } from "node:crypto";
 
 export abstract class Character implements CharacterStructure {
   public isAlive = true;
@@ -9,7 +10,7 @@ export abstract class Character implements CharacterStructure {
     public familyName: string,
     public age: number,
   ) {
-    this.id = crypto.randomUUID();
+    this.id = randomUUID();
   }
 
   die() {
