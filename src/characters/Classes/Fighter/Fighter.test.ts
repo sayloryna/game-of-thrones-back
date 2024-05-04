@@ -1,4 +1,4 @@
-import { Fighter } from "./Fighter";
+import { Fighter } from "./Fighter.js";
 
 describe("Given a Fighter", () => {
   describe("When it speaks", () => {

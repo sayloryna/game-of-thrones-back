@@ -1,7 +1,7 @@
 import {
-  type Level,
-  type BasicCharacter,
   type SquireStructure,
+  type BasicCharacter,
+  type Level,
 } from "../../types";
 import { Character } from "../Character/Character.js";
 

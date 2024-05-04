@@ -1,4 +1,4 @@
-import { King } from "./King";
+import { King } from "./King.js";
 
 describe("Given a King", () => {
   describe("When it speaks", () => {

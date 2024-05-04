@@ -1,5 +1,5 @@
-import { Squire } from "./Squire.js";
 import { Fighter } from "../Fighter/Fighter.js";
+import { Squire } from "./Squire.js";
 
 describe("Given a Squire", () => {
   describe("When it speaks", () => {
