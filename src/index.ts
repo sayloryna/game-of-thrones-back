@@ -1,6 +1,6 @@
 import express from "express";
 
-import { type Character } from "./characters/classes/Character/Character.js";
+import { type Character } from "./characters/patatafrita/Character/Character.js";
 import cors from "cors";
 import morgan from "morgan";
 import charactersRouter from "./characters/routers/charactersRouter.js";

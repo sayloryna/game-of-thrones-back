@@ -1,8 +1,8 @@
 import { type Characters } from "../..";
-import { Counselor } from "../Classes/Counselor/Counselor";
-import { Fighter } from "../Classes/Fighter/Fighter";
-import { King } from "../Classes/King/King";
-import { Squire } from "../Classes/Squire/Squire";
+import { Counselor } from "../patatafrita/Counselor/Counselor";
+import { Fighter } from "../patatafrita/Fighter/Fighter";
+import { King } from "../patatafrita/King/King";
+import { Squire } from "../patatafrita/Squire/Squire";
 
 const joffreyBaratheon = new King(
   { name: "Jofrrey", familyName: "Baratheon", age: 14 },
