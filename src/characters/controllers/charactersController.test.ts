@@ -10,6 +10,9 @@ describe("Given the characterController", () => {
       status: jest.fn(),
       json: jest.fn(),
     };
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
     test("Then it should set the response statusCode to 200", () => {
       const statusCode = 200;
 
@@ -22,6 +25,7 @@ describe("Given the characterController", () => {
       charactersControler.get(req as Request, res as Response);
 
       expect(res.json).toHaveBeenCalledWith({ characters });
+      expect(res.json).toHaveBeenCalledTimes(1);
     });
   });
 });
