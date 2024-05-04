@@ -41,12 +41,10 @@ const bronn = new Squire(
   "images/characters-img/bronn.webp",
 );
 
-export const characters: Characters = {
-  characters: [
-    jaimeLannister,
-    joffreyBaratheon,
-    tyrionLannister,
-    daenerysTargaryen,
-    bronn,
-  ],
-};
+export const characters = [
+  jaimeLannister,
+  joffreyBaratheon,
+  tyrionLannister,
+  daenerysTargaryen,
+  bronn,
+];

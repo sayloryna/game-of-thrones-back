@@ -3,12 +3,13 @@ import { characters } from "../data/characters.js";
 
 export const charactersControler = {
   get(_req: Request, res: Response) {
-    res.status(200).json(characters);
+    res.status(200);
+    res.json({ characters });
   },
 
   speak(req: Request, res: Response) {
     const characterId = req.params.id;
-    const character = characters.characters.find(
+    const character = characters.find(
       (character) => character.id === characterId,
     );
 
