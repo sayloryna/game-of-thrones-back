@@ -1,10 +1,9 @@
-import { type Characters } from "../..";
 import { Counselor } from "../classes/Counselor/Counselor.js";
 import { Fighter } from "../classes/Fighter/Fighter.js";
 import { King } from "../classes/King/King.js";
 import { Squire } from "../classes/Squire/Squire.js";
 
-const joffreyBaratheon = new King(
+export const joffreyBaratheon = new King(
   { name: "Jofrrey", familyName: "Baratheon", age: 14 },
   2,
   "images/characters-img/joffrey.webp",
@@ -41,12 +40,10 @@ const bronn = new Squire(
   "images/characters-img/bronn.webp",
 );
 
-export const characters: Characters = {
-  characters: [
-    jaimeLannister,
-    joffreyBaratheon,
-    tyrionLannister,
-    daenerysTargaryen,
-    bronn,
-  ],
-};
+export const characters = [
+  jaimeLannister,
+  joffreyBaratheon,
+  tyrionLannister,
+  daenerysTargaryen,
+  bronn,
+];

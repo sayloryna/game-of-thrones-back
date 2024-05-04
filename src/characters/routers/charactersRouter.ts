@@ -1,11 +1,10 @@
-import express, { type Response } from "express";
-import { type Characters } from "../..";
-import { characters } from "../data/characters.js";
+import express from "express";
+import { charactersControler } from "../controllers/charactersController.js";
 
 const charactersRouter = express.Router();
 
-charactersRouter.get("/", (_req, res: Response<Characters>) => {
-  res.status(200).json(characters);
-});
+charactersRouter.get("/", charactersControler.getCharacters);
+
+charactersRouter.get("/:id", charactersControler.getLocution);
 
 export default charactersRouter;
