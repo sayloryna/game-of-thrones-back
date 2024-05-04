@@ -1,27 +1,23 @@
-import express, { type Response } from "express";
+import express from "express";
 
-import { characters } from "./characters/characters.js";
-import { type Character } from "./characters/Character/Character.js";
+import { type Character } from "./characters/classes/Character/Character.js";
+import cors from "cors";
+import morgan from "morgan";
+import charactersRouter from "./characters/routers/charactersRouter.js";
 
 export interface Characters {
   characters: Character[];
 }
 
 const app = express();
+app.use(morgan("dev"));
+app.use(cors());
 
 app.listen(4000, () => {
-  console.log("Listening on port: http://localhost:4000");
+  console.log("Listening on port: 4000");
 });
 
-app.use((_req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-
-  next();
-});
-
-app.get("/characters", (_req, res: Response<Characters>) => {
-  res.status(200).json(characters);
-});
+app.use("/characters", charactersRouter);
 
 app.use((_req, res) => {
   res.status(404).json({ error: "Endpoint not found" });

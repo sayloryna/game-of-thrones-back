@@ -1,4 +1,4 @@
-import { type BasicCharacter, type KingStructure } from "../../types.js";
+import { type KingStructure, type BasicCharacter } from "../../types";
 import { Character } from "../Character/Character.js";
 
 export class King extends Character implements KingStructure {

@@ -1,4 +1,4 @@
-import { type BasicCharacter, type CounselorStructure } from "../../types";
+import { type CounselorStructure, type BasicCharacter } from "../../types";
 import { Character } from "../Character/Character.js";
 
 export class Counselor extends Character implements CounselorStructure {

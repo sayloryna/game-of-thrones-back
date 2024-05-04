@@ -1,5 +1,5 @@
-import { King } from "../King/King";
-import { Counselor } from "./Counselor";
+import { King } from "../King/King.js";
+import { Counselor } from "./Counselor.js";
 
 describe("Given a Counselor", () => {
   describe("When it speaks", () => {

@@ -1,4 +1,4 @@
-import { type Character } from "./characters/Character/Character.js";
+import { type Character } from "./classes/Character/Character.js";
 
 export interface BasicCharacter {
   name: string;
