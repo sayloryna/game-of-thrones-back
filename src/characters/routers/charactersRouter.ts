@@ -3,8 +3,8 @@ import { charactersControler } from "../controllers/charactersController.js";
 
 const charactersRouter = express.Router();
 
-charactersRouter.get("/", charactersControler.get);
+charactersRouter.get("/", charactersControler.getCharacters);
 
-charactersRouter.get("/:id", charactersControler.speak);
+charactersRouter.get("/:id", charactersControler.getLocution);
 
 export default charactersRouter;
