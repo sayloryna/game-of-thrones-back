@@ -7,22 +7,6 @@ export const charactersControler = {
     res.json({ characters });
   },
 
-  getLocution(req: Request, res: Response) {
-    const characterId = req.params.id;
-    const character = characters.find(
-      (character) => character.id === characterId,
-    );
-
-    if (character) {
-      res.status(200);
-      res.json({ locution: character.speak() });
-      return;
-    }
-
-    res.status(404);
-    res.json({ error: "Character matching that id Not Found" });
-  },
-
   killCharacter(req: Request, res: Response) {
     const characterId = req.params.id;
     const character = characters.find(

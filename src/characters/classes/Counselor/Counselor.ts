@@ -3,14 +3,14 @@ import { Character } from "../Character/Character.js";
 
 export class Counselor extends Character implements CounselorStructure {
   constructor(
-    { age, familyName, name }: BasicCharacter,
+    { age, familyName, name, photoSource }: BasicCharacter,
     public counselledCharacter: Character,
-    public photoSource: string,
+    public locution = "No sé por qué, pero creo que voy a morir pronto",
   ) {
-    super(name, familyName, age);
+    super(name, familyName, age, photoSource);
   }
 
   public speak() {
-    return "No sé por qué, pero creo que voy a morir pronto";
+    return this.locution;
   }
 }
