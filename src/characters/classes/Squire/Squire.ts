@@ -10,11 +10,12 @@ export class Squire extends Character implements SquireStructure {
     { age, familyName, name, photoSource }: BasicCharacter,
     public master: Character,
     public grovellingLevel: Level,
+    public locution = "Soy un loser",
   ) {
     super(name, familyName, age, photoSource);
   }
 
   speak() {
-    return "Soy un loser";
+    return this.locution;
   }
 }
