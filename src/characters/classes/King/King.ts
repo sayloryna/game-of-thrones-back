@@ -3,14 +3,14 @@ import { Character } from "../Character/Character.js";
 
 export class King extends Character implements KingStructure {
   constructor(
-    { name, familyName, age }: BasicCharacter,
+    { name, familyName, age, photoSource }: BasicCharacter,
     public totalReignYears: number,
-    public photoSource: string,
+    public locution = "Vais a morir todos",
   ) {
-    super(name, familyName, age);
+    super(name, familyName, age, photoSource);
   }
 
   speak() {
-    return "Vais a morir todos";
+    return this.locution;
   }
 }

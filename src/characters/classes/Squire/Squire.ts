@@ -7,12 +7,11 @@ import { Character } from "../Character/Character.js";
 
 export class Squire extends Character implements SquireStructure {
   constructor(
-    { age, familyName, name }: BasicCharacter,
+    { age, familyName, name, photoSource }: BasicCharacter,
     public master: Character,
     public grovellingLevel: Level,
-    public photoSource: string,
   ) {
-    super(name, familyName, age);
+    super(name, familyName, age, photoSource);
   }
 
   speak() {

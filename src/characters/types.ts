@@ -4,6 +4,7 @@ export interface BasicCharacter {
   name: string;
   familyName: string;
   age: number;
+  photoSource: string;
 }
 
 export interface CharacterStructure extends BasicCharacter {

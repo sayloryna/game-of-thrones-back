@@ -9,6 +9,7 @@ export abstract class Character implements CharacterStructure {
     public name: string,
     public familyName: string,
     public age: number,
+    public photoSource: string,
   ) {
     this.id = randomUUID();
   }

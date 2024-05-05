@@ -7,15 +7,15 @@ import { Character } from "../Character/Character.js";
 
 export class Fighter extends Character implements FighterStructure {
   constructor(
-    { name, familyName, age }: BasicCharacter,
+    { name, familyName, age, photoSource }: BasicCharacter,
     public weapon: string,
     public dexterityLevel: Level,
-    public photoSource: string,
+    public locution = "Primero pego y luego pregunto",
   ) {
-    super(name, familyName, age);
+    super(name, familyName, age, photoSource);
   }
 
   speak() {
-    return "Primero pego y luego pregunto";
+    return this.locution;
   }
 }

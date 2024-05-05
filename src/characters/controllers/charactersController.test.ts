@@ -48,7 +48,10 @@ describe("Given the characterController", () => {
 
   describe("When its getLocution method is called with a request including a character Id that is NOT in the list of characters and a response", () => {
     test("Then it the response should have a status code of 404 and with the message: error: 'Character matching that id Not Found'", () => {
-      const character = new King({ name: "", familyName: "", age: 5 }, 5, "");
+      const character = new King(
+        { name: "", familyName: "", age: 5, photoSource: "" },
+        5,
+      );
 
       const req: Partial<Request> = {
         params: {
@@ -85,7 +88,10 @@ describe("Given the characterController", () => {
 
   describe("When its killCharacter method its called with a request including a character Id that's NOT in the list of characters", () => {
     test("Then the character should be dead and the response status code should be 404 and the response include a message: error:'Character matching that id Not Found'", () => {
-      const character = new King({ name: "", familyName: "", age: 5 }, 5, "");
+      const character = new King(
+        { name: "", familyName: "", age: 5, photoSource: "" },
+        5,
+      );
       const statusCode = 404;
 
       const req: Partial<Request> = {
