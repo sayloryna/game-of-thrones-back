@@ -7,4 +7,6 @@ charactersRouter.get("/", charactersControler.getCharacters);
 
 charactersRouter.get("/:id", charactersControler.getLocution);
 
+charactersRouter.patch("/:id", charactersControler.killCharacter);
+
 export default charactersRouter;
