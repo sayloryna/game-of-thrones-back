@@ -65,7 +65,7 @@ describe("Given the characterController", () => {
     });
   });
 
-  describe("When its killCharacter method its called with a reques incuding a charcter Id thats in the list of charcaters", () => {
+  describe("When its killCharacter method its called with a request including a character Id that's in the list of charcaters", () => {
     test("Then the character should be dead and the response status code should be 214", () => {
       const character = joffreyBaratheon;
       const statusCode = 214;
@@ -83,10 +83,10 @@ describe("Given the characterController", () => {
     });
   });
 
-  describe("When its killCharacter method its called with a reques incuding a charcter Id thats in the list of charcaters", () => {
-    test("Then the character should be dead and the response status code should be 214", () => {
+  describe("When its killCharacter method its called with a request including a character Id that's NOT in the list of characters", () => {
+    test("Then the character should be dead and the response status code should be 404 and the response include a message: error:'Character matching that id Not Found'", () => {
       const character = new King({ name: "", familyName: "", age: 5 }, 5, "");
-      const statusCode = 214;
+      const statusCode = 404;
 
       const req: Partial<Request> = {
         params: {
@@ -97,6 +97,9 @@ describe("Given the characterController", () => {
       charactersControler.killCharacter(req as Request, res as Response);
 
       expect(res.status).toHaveBeenCalledWith(statusCode);
+      expect(res.json).toHaveBeenCalledWith({
+        error: "Character matching that id Not Found",
+      });
     });
   });
 });
