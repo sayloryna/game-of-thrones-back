@@ -31,43 +31,6 @@ describe("Given the characterController", () => {
     });
   });
 
-  describe("When its getLocution method is called with a request including a character Id  thaths in the list of characters and a response", () => {
-    test("Then it should set the response body to the character with that ID locution", () => {
-      const character = joffreyBaratheon;
-
-      const req: Partial<Request> = {
-        params: {
-          id: character.id,
-        },
-      };
-      charactersControler.getLocution(req as Request, res as Response);
-
-      expect(res.json).toHaveBeenCalledWith({ locution: character.speak() });
-    });
-  });
-
-  describe("When its getLocution method is called with a request including a character Id that is NOT in the list of characters and a response", () => {
-    test("Then it the response should have a status code of 404 and with the message: error: 'Character matching that id Not Found'", () => {
-      const character = new King(
-        { name: "", familyName: "", age: 5, photoSource: "" },
-        5,
-      );
-
-      const req: Partial<Request> = {
-        params: {
-          id: character.id,
-        },
-      };
-
-      charactersControler.getLocution(req as Request, res as Response);
-
-      expect(res.status).toHaveBeenCalledWith(404);
-      expect(res.json).toHaveBeenCalledWith({
-        error: "Character matching that id Not Found",
-      });
-    });
-  });
-
   describe("When its killCharacter method its called with a request including a character Id that's in the list of charcaters", () => {
     test("Then the character should be dead and the response status code should be 214", () => {
       const character = joffreyBaratheon;
