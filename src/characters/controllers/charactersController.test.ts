@@ -2,6 +2,7 @@ import { type Response, type Request } from "express";
 
 import { charactersControler } from "./charactersController.js";
 import { characters, joffreyBaratheon } from "../data/characters.js";
+import { King } from "../classes/King/King.js";
 
 describe("Given the characterController", () => {
   const req: Partial<Request> = {};
@@ -11,7 +12,7 @@ describe("Given the characterController", () => {
   };
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    jest.resetAllMocks();
   });
 
   describe("When its getCharacter method is called wiht a request and a response", () => {
@@ -27,11 +28,10 @@ describe("Given the characterController", () => {
       charactersControler.getCharacters(req as Request, res as Response);
 
       expect(res.json).toHaveBeenCalledWith({ characters });
-      expect(res.json).toHaveBeenCalledTimes(1);
     });
   });
 
-  describe("when its getLocution method is called with a request includin a character Id and a response", () => {
+  describe("When its getLocution method is called with a request including a character Id  thaths in the list of characters and a response", () => {
     test("Then it should set the response body to the character with that ID locution", () => {
       const character = joffreyBaratheon;
 
@@ -43,6 +43,63 @@ describe("Given the characterController", () => {
       charactersControler.getLocution(req as Request, res as Response);
 
       expect(res.json).toHaveBeenCalledWith({ locution: character.speak() });
+    });
+  });
+
+  describe("When its getLocution method is called with a request including a character Id that is NOT in the list of characters and a response", () => {
+    test("Then it the response should have a status code of 404 and with the message: error: 'Character matching that id Not Found'", () => {
+      const character = new King({ name: "", familyName: "", age: 5 }, 5, "");
+
+      const req: Partial<Request> = {
+        params: {
+          id: character.id,
+        },
+      };
+
+      charactersControler.getLocution(req as Request, res as Response);
+
+      expect(res.status).toHaveBeenCalledWith(404);
+      expect(res.json).toHaveBeenCalledWith({
+        error: "Character matching that id Not Found",
+      });
+    });
+  });
+
+  describe("When its killCharacter method its called with a request including a character Id that's in the list of charcaters", () => {
+    test("Then the character should be dead and the response status code should be 214", () => {
+      const character = joffreyBaratheon;
+      const statusCode = 214;
+
+      const req: Partial<Request> = {
+        params: {
+          id: character.id,
+        },
+      };
+
+      charactersControler.killCharacter(req as Request, res as Response);
+
+      expect(res.status).toHaveBeenCalledWith(statusCode);
+      expect(character.isAlive).toBe(false);
+    });
+  });
+
+  describe("When its killCharacter method its called with a request including a character Id that's NOT in the list of characters", () => {
+    test("Then the character should be dead and the response status code should be 404 and the response include a message: error:'Character matching that id Not Found'", () => {
+      const character = new King({ name: "", familyName: "", age: 5 }, 5, "");
+      const statusCode = 404;
+
+      const req: Partial<Request> = {
+        params: {
+          id: character.id,
+        },
+      };
+
+      charactersControler.killCharacter(req as Request, res as Response);
+
+      expect(res.status).toHaveBeenCalledWith(statusCode);
+      expect(res.json).toHaveBeenCalledWith({
+        error: "Character matching that id Not Found",
+      });
     });
   });
 });

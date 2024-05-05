@@ -20,6 +20,22 @@ export const charactersControler = {
     }
 
     res.status(404);
-    res.json({ error: "character matching that id Not Found" });
+    res.json({ error: "Character matching that id Not Found" });
+  },
+
+  killCharacter(req: Request, res: Response) {
+    const characterId = req.params.id;
+    const character = characters.find(
+      (character) => character.id === characterId,
+    );
+
+    if (character) {
+      character.die();
+      res.status(214);
+      res.json({ character });
+    }
+
+    res.status(404);
+    res.json({ error: "Character matching that id Not Found" });
   },
 };
